@@ -4,6 +4,7 @@ import Cards from '../components/Cards';
 import Inputs from '../components/input';
 import Colors from '../constants/colors';
 import NumberContainer from '../components/numberContainer';
+import BodyText from '../components/bodyText';
 
 const StartGameScreen = props => {
     const [enteredValue,setEnteredValue] = useState('')
@@ -52,12 +53,13 @@ const StartGameScreen = props => {
     <View style={styles.screen}>
         <Text style={styles.title}>start a new game</Text>
         <Cards style={styles.input}>
-            <Text>enter number</Text>
+            <BodyText>enter number</BodyText>
             <Inputs style={styles.inputs} 
             blurOnSubmit 
             autoCapitalize='none' 
             autoCorrect={false} 
-            keyboardType='number-pad' 
+            keyboardType='number-pad'
+            maxLength={2} 
             onChangeText={numberInputHandler}
             value={enteredValue}/>
         <View style={styles.bothbutton}>
@@ -83,7 +85,8 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize:20,
-        marginVertical:10
+        marginVertical:10,
+        fontFamily:'open-sans-bold'
     },
     input:{
         width:300,
@@ -103,7 +106,8 @@ const styles = StyleSheet.create({
     },
     inputs:{
         width:50,
-        textAlign:'center'
+        textAlign:'center',
+        fontFamily:'open-sans-bold'
     },
     summaryContainer:{
         marginTop:20,

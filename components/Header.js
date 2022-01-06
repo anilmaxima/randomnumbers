@@ -21,7 +21,8 @@ const Header = props => {
       },
       headertitle:{
           color:'black',
-          fontSize:20
+          fontSize:20,
+          fontFamily:'open-sans-bold'
       }
     });
     export default Header
