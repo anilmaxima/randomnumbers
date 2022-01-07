@@ -1,5 +1,14 @@
 import React, {useState}from 'react'
-import { StyleSheet, View, Text,Button, Keyboard,TouchableWithoutFeedback, Alert} from 'react-native';
+import { StyleSheet, 
+    View, 
+    Text, 
+    Button, 
+    Keyboard, 
+    TouchableWithoutFeedback, 
+    Alert, 
+    ScrollView, 
+    KeyboardAvoidingView} 
+    from 'react-native';
 import Cards from '../components/Cards';
 import Inputs from '../components/input';
 import Colors from '../constants/colors';
@@ -26,8 +35,7 @@ const StartGameScreen = props => {
             Alert.alert(
                 'invalid number',//title
                 'enter a valid number',//message
-                [{text:'ok',style:'default',onpress:resetInputHandler}]//button
-                )
+                [{text:'ok',style:'default',onpress:resetInputHandler}]) //button
             return
         }
         setConformed(true)
@@ -47,6 +55,8 @@ const StartGameScreen = props => {
         )
     }
     return (
+        <ScrollView>
+            <KeyboardAvoidingView behavior='position' keyboardVerticalOffset={30}>
         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss()
         }}>
@@ -74,6 +84,8 @@ const StartGameScreen = props => {
         {conformedOutput}
     </View>
     </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
+    </ScrollView>
     )
 }
 

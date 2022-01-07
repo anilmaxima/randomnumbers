@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
         height:'100%'
     },
     input:{
-        color: Colors.accent
+        color: Colors.accent,
+        fontSize:20
     },
     bodycontainer:{
         marginHorizontal:20
