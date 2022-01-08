@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import * as Font from 'expo-font';
 import  AppLoading  from 'expo-app-loading';
 
@@ -51,10 +51,10 @@ if (userNumber && guessRounds <= 0 ) {
 }
 
   return (
-    <View style={styles.screen}>
+    <SafeAreaView style={styles.screen}>
       <Header title="guess a number"/>
       {content}
-    </View>
+    </SafeAreaView>
   );
 }
 
